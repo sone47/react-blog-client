@@ -1,0 +1,115 @@
+#nav {
+  height: 100%;
+  width: 200px;
+  border-right: 1px solid #d8d8d8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  position: relative;
+  transition: margin-left 0.5s ease;
+}
+
+#nav.toggle-nav {
+  margin-left: -160px;
+}
+
+#nav .nav-list {
+  width: 100%;
+  transition: opacity 0.5s ease;
+}
+
+#nav.toggle-nav .nav-list {
+  opacity: 0;
+}
+
+#nav .nav-item {
+  height: 40px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+#nav .nav-item a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#nav .nav-item a.active {
+  box-sizing: border-box;
+  width: calc(100% + 1px);
+  border: 1px solid #d8d8d8;
+  border-right: 1px solid #fff;
+  border-left: none;
+}
+
+#nav .nav-item:hover a {
+  color: #23ade5;
+}
+
+/*导航呼出按钮*/
+#nav .pop-btn {
+  width: 20px;
+  box-sizing: border-box;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+#nav .pop-btn span {
+  display: block;
+  margin-bottom: 5px;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  opacity: 1;
+  transform-origin: 20px 50%;
+  transition: opacity 0.55s ease,
+              transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+#nav .pop-btn:hover span {
+  background-color: #23ade5;
+}
+
+#nav .pop-btn span:nth-last-child(1) {
+  transform: rotate(45deg);
+}
+
+#nav .pop-btn span:nth-last-child(2) {
+  opacity: 0;
+}
+
+#nav .pop-btn span:nth-last-child(3) {
+  transform: rotate(-45deg);
+}
+
+#nav.toggle-nav .pop-btn span {
+  transform: rotate(0);
+  opacity: 1;
+}
+
+/* iPad 竖屏 */
+@media only screen and (max-width: 768px) {
+  #nav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.5s ease;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  #nav.toggle-nav {
+    transform: translate3d(-100%, 0, 0);
+    margin-left: 0;
+  }
+
+  /*导航呼出按钮*/
+  #nav.toggle-nav .pop-btn {
+    right: -30px;
+  }
+}

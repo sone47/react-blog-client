@@ -1,0 +1,76 @@
+.msg-form .input {
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.msg-form .name {
+  width: 40%;
+}
+
+.msg-form .content {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.contact .input {
+  font-size: 18px;
+  height: 50px;
+  width: 48%;
+}
+
+.publish {
+  width: 100%;
+  margin: 0 auto;
+  background: transparent;
+  color: #333;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0);
+  transition: 0.35s;
+  cursor: pointer;
+}
+
+.publish:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+::-webkit-input-placeholder {
+    color: #bcbcbc;
+}
+:-moz-placeholder {
+    color: #bcbcbc;
+}
+::-moz-placeholder {
+    color: #bcbcbc;
+}
+:-ms-input-placeholder {
+    color: #bcbcbc;
+}
+
+/* Nexus 7 竖屏 */
+@media only screen and (max-width: 600px) {
+  .msg-form .input {
+    width: 100%;
+  }
+
+  .contact {
+    display: block;
+    margin-bottom: 0;
+  }
+
+  .contact .input {
+    margin-bottom: 20px;
+  }
+}
