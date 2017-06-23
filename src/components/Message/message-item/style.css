@@ -24,7 +24,7 @@
 
 .msg-header .time {
   display: block;
-  padding-top: 5px;
+  padding-top: 10px;
   font-size: 14px;
   color: #888;
 }
@@ -34,4 +34,17 @@
   color: rgba(0, 0, 0, 0.6);
   font-size: 18px;
   line-height: 1.5;
+}
+
+@media only screen and (max-width: 600px) {
+  .msg-item {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+}
+/* iPhone6 */
+@media only screen and (max-width: 375px) {
+  .msg-item {
+    padding: 15px;
+  }
 }

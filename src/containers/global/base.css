@@ -14,4 +14,29 @@ html, body {
 .main-wrap > .content {
   overflow: auto;
   height: 100%;
+  padding: 30px 200px;
+}
+
+@media only screen and (max-width: 1100px) {
+  .main-wrap > .content {
+    padding: 30px 150px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .main-wrap > .content {
+    padding: 30px 100px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .main-wrap > .content {
+    padding: 30px 50px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .main-wrap > .content {
+    padding: 30px 20px;
+  }
 }

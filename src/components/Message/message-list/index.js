@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import MsgItem from '../message-item';
 import Loading from '../../Loading';
 
-import './style.css';
-
 class MsgList extends Component {
   constructor(props) {
     super(props);

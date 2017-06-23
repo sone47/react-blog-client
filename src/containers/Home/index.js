@@ -1,7 +1,28 @@
-import React from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-const Home = () => (
-  <div id="home" className="content">home</div>
-);
+import Article from '../../components/Article';
+import * as fetchActions from '../../actions/message/fetch';
+import * as addActions from '../../actions/message/add';
 
-export default Home;
+let actions = Object.assign({}, fetchActions, addActions);
+
+const mapStateToProps = state => {
+  let { messages, total, loading, error } = state.message;
+
+  return {
+    messages,
+    loading,
+    total,
+    error
+  };
+};
+
+const mapDispatchToProps = dispatch => ({
+  msgActions: bindActionCreators(actions, dispatch)
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Article);

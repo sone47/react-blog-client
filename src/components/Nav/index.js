@@ -26,19 +26,20 @@ class Nav extends Component {
     super(props);
 
     this.state = {
-      navShow: false
+      // only when screen's width is wider than iPad's(768px) show the navigator
+      navHide: process.browser && window.innerWidth < 768
     };
     this.toggleHandler = this.toggleHandler.bind(this);
   }
 
   toggleHandler() {
     this.setState({
-      navShow: !this.state.navShow
+      navHide: !this.state.navHide
     });
   }
 
   render() {
-    let navClass = classNames({ 'toggle-nav': !this.state.navShow });
+    let navClass = classNames({ 'toggle-nav': this.state.navHide });
 
     return (
       <aside id="nav" className={ navClass }>
