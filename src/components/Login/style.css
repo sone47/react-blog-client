@@ -1,0 +1,23 @@
+#login {
+  width: 300px;
+  margin: 150px auto 0;
+  text-align: center;
+}
+
+#login .title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+#login form {
+  text-align: center;
+}
+
+#login .ant-input {
+  margin-bottom: 8px;
+}
+
+#login .ant-btn {
+  width: 100%;
+}

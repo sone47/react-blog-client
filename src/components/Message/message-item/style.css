@@ -17,6 +17,10 @@
   margin-bottom: 20px;
 }
 
+.msg-header .delete-btn {
+  float: right;
+}
+
 .msg-header .name {
   color: #333;
   font-size: 22px;

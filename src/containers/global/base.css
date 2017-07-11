@@ -1,10 +1,10 @@
 html, body {
   height: 100%;
-  margin: 0;
 }
 
 #root {
   height: 100%;
+  padding-top: 0.1px;
 }
 
 .main-wrap {

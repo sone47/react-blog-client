@@ -55,12 +55,13 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify(process.env.NODE_ENV) || JSON.stringify('development')
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV) || JSON.stringify('dev')
       }
     }),
     new htmlWebpackPlugin({
       filename: 'index.ejs',
       template: path.resolve(process.cwd(), 'src/index.html'),
+      title: `Sone's blog`,
       meta: '<%- meta %>',
       htmlDOM: '<%- html %>',
       reduxState: '<%- reduxState %>'

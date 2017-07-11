@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { reduxForm, Field, SubmissionError } from 'redux-form';
 import submit from './submit';
 
 import './style.css';
 
-const renderField = ({ input, placeholder, maxLength, className, meta: { touched, error } }) => {
+const renderField = ({ input, placeholder, maxLength, className }) => {
   // 文本框加入 required 也要求规定输入，但是兼容性不好
   return (
     input.name === 'content' ? 

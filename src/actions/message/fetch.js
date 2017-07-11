@@ -1,7 +1,9 @@
 import 'whatwg-fetch';
 import config from '../../../config';
 import serialize from '../../common/serialize';
-import { LOAD_MSGS, LOAD_MSGS_SUCCESS, LOAD_MSGS_ERROR } from './constant';
+import { messageConstant } from '../constant';
+
+const { LOAD_MSGS, LOAD_MSGS_SUCCESS, LOAD_MSGS_ERROR } = messageConstant;
 
 export const loadMsgs = () => ({
   type: LOAD_MSGS

@@ -1,10 +1,20 @@
-import { LOAD_MSGS, LOAD_MSGS_SUCCESS, LOAD_MSGS_ERROR, ADD_MSGS_SUCCESS, ADD_MSGS_ERROR } from '../actions/message/constant';
+import { messageConstant } from '../actions/constant';
+
+const {
+  LOAD_MSGS,
+  LOAD_MSGS_SUCCESS,
+  LOAD_MSGS_ERROR,
+  ADD_MSGS_SUCCESS,
+  ADD_MSGS_ERROR,
+  DELETE_MSG_SUCCESS,
+  DELETE_MSG_ERROR
+} = messageConstant;
 
 const initialState = {
   loading: true,
   error: false,
   messages: [],
-  pageNum: 1
+  total: 0
 };
 
 function message(state = initialState, action = {}) {
@@ -44,6 +54,33 @@ function message(state = initialState, action = {}) {
     }
 
     case ADD_MSGS_ERROR: {
+      return {
+        ...state,
+        error: action.error
+      };
+    }
+
+    case DELETE_MSG_SUCCESS: {
+      const id = action.id,
+            messages = state.messages,
+            length = messages.length;
+      // remove assigned id message
+      for(let i = 0; i < length; i++) {
+        let message = messages[i];
+        if(message._id === id) {
+          messages.splice(i, 1);
+          break;
+        }
+      }
+
+      return {
+        ...state,
+        total: state.total - 1,
+        messages
+      };
+    }
+
+    case DELETE_MSG_ERROR: {
       return {
         ...state,
         error: action.error

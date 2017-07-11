@@ -1,9 +1,29 @@
-import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-const Admin = () => (
-  <div id="admin">
-    <h3 className="title">管理员登录</h3>
-  </div>
-);
+import Admin from '../../components/Admin';
+import * as loginActions from '../../actions/user/login';
+import * as verifyActions from '../../actions/user/verify';
 
-export default Admin;
+let actions = Object.assign({}, loginActions, verifyActions);
+
+const mapStateToProps = state => {
+  let { name, token, isAdmin, loading, error } = state.user;
+
+  return {
+    name,
+    isAdmin,
+    token,
+    loading,
+    error
+  };
+};
+
+const mapDispatchToProps = dispatch => ({
+  userActions: bindActionCreators(actions, dispatch)
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Admin);

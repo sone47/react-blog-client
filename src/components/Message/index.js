@@ -19,10 +19,12 @@ const Message = ({ messages, total, msgActions, loading, error }) => (
       error={error}
       {...msgActions}
     />
-    <Pagination
-      total={total}
-      fetch={msgActions.fetchMsgs}
-    />
+    {
+      !loading && !error && <Pagination
+        total={total}
+        fetch={msgActions.fetchMsgs}
+      />
+    }
   </div>
 );
 

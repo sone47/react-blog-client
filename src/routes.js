@@ -14,16 +14,18 @@ import 'normalize.css';
 import './containers/global/reset.css';
 import './containers/global/base.css';
 
-const Blog = (history) => (
-  <Router history={browserHistory}>
-    <Route path="/" component={Frame}>
-      <IndexRoute component={Home}/>
-      <Route path="/topic" component={Topic}/>
-      <Route path="/about" component={About}/>
-      <Route path="/message" component={Message}/>
+const Blog = (history) => {
+  return (
+    <Router history={browserHistory}>
       <Route path="/admin" component={Admin}/>
-    </Route>
-  </Router>
-);
+      <Route path="/" component={Frame}>
+        <IndexRoute component={Home}/>
+        <Route path="/topic" component={Topic}/>
+        <Route path="/about" component={About}/>
+        <Route path="/message" component={Message}/>
+      </Route>
+    </Router>
+  );
+};
 
 export default Blog;

@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV=production webpack",
-    "release": "NODE_ENV=production webpack",
+    "build": "NODE_ENV=prod webpack",
+    "release": "NODE_ENV=prod webpack",
     "dev": "NODE_ENV=dev node server",
-    "server": "NODE_ENV=production node server"
+    "start": "NODE_ENV=prod node server"
   },
   "keywords": [],
   "author": "",
@@ -38,6 +38,7 @@
     "ejs-loader": "^0.3.0",
     "express": "^4.15.3",
     "koa": "^2.2.0",
+    "md5": "^2.2.1",
     "moment": "^2.18.1",
     "normalize.css": "^6.0.0",
     "prop-types": "^15.5.9",

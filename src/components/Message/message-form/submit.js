@@ -1,6 +1,6 @@
 import { message } from 'antd';
 import xss from 'xss';
-import { required, isEmail, isWebsite } from './validate';
+import { required, isEmail, isWebsite } from '../../../common/validate';
 
 // 修改全局提示高度
 message.config({ top: 80 });

@@ -7,6 +7,8 @@ const dev = {
   api: {
     port: 3000,
     message: `${serverPath}:${apiPort}/message`,
+    login: `${serverPath}:${apiPort}/token`,
+    verify: `${serverPath}:${apiPort}/auth`,
   }
 };
 

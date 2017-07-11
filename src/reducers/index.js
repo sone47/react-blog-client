@@ -2,9 +2,11 @@ import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 
 import message from './message';
+import user from './user';
 
 const states = {
   message,
+  user,
   form: formReducer
 };
 

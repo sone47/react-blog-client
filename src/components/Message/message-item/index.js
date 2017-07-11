@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
+import { Button } from 'antd';
 import './style.css';
 
 class MsgItem extends Component {
@@ -19,7 +20,7 @@ class MsgItem extends Component {
   };
 
   render() {
-    let { name, website, createTime, content } = this.props;
+    let { name, website, createTime, content, deleteMsg, _id } = this.props;
 
     website = website ? <a href={ `http://${website}` } target="_blank">{ name }</a> : name;
 
@@ -33,6 +34,9 @@ class MsgItem extends Component {
     return (
       <li className="msg-item">
         <div className="msg-header">
+          {
+            sessionStorage.getItem('admin-token') && <Button size="large" className="delete-btn" onClick={() => { deleteMsg(_id) }}>删除</Button>
+          }
           <p className="name">{ website }</p>
           <span className="time">
             { createTime }

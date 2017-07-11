@@ -1,6 +1,8 @@
 import 'whatwg-fetch';
 import config from '../../../config';
-import { ADD_MSGS_SUCCESS, ADD_MSGS_ERROR } from './constant';
+import { messageConstant } from '../constant';
+
+const { ADD_MSGS_SUCCESS, ADD_MSGS_ERROR } = messageConstant;
 
 export const addSuccess = (message) => ({
   type: ADD_MSGS_SUCCESS,
